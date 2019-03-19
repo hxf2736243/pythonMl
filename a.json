@@ -1,0 +1,52 @@
+{
+  "respCode": "0000",
+  "respInfo": {
+    "start": "0",
+    "draw": "5",
+    "length": "20",
+    "recordsTotal": 3,
+    "recordsFiltered": 3,
+    "data": [
+      {
+        "eqt_type_desc": "0流通",
+        "sec_acct": "A19***6449",
+        "hld_vol": "10000",
+        "stk_chrc_desc": "/",
+        "cstd_org_abbr": "长城证券客户",
+        "index": "1",
+        "frz_vol": "0",
+        "sec_abbr": "航天机电",
+        "negt_type_desc": "/",
+        "sec_code": "600151",
+        "cap_type_desc": "无限售流通股"
+      },
+      {
+        "eqt_type_desc": "0流通",
+        "sec_acct": "A19***6449",
+        "hld_vol": "4000",
+        "stk_chrc_desc": "/",
+        "cstd_org_abbr": "长城证券客户",
+        "index": "2",
+        "frz_vol": "0",
+        "sec_abbr": "海通证券",
+        "negt_type_desc": "/",
+        "sec_code": "600837",
+        "cap_type_desc": "无限售流通股"
+      },
+      {
+        "eqt_type_desc": "0流通",
+        "sec_acct": "A19***6449",
+        "hld_vol": "2400",
+        "stk_chrc_desc": "/",
+        "cstd_org_abbr": "长城证券客户",
+        "index": "3",
+        "frz_vol": "0",
+        "sec_abbr": "人民网",
+        "negt_type_desc": "/",
+        "sec_code": "603000",
+        "cap_type_desc": "无限售流通股"
+      }
+    ],
+    "query_date": "2019-03-07"
+  }
+}
