@@ -4,10 +4,12 @@ import os.path
 import xml.dom.minidom
 
 
-def set_skip_false(pom):
+def set_skip_false(path,f):
     # parse an xml file by name
+    pom=os.path.join(path, f)
     dom = xml.dom.minidom.parse(pom)
-    with open('bak_'+pom,'w',encoding='UTF-8') as fh:
+    bak_pom = os.path.join(path, "bak_pom.xml")
+    with open(bak_pom,'w',encoding='UTF-8') as fh:
         dom.writexml(fh,encoding='UTF-8')
 # find skip tag & set false
     items = dom.getElementsByTagName('skip')
@@ -20,6 +22,18 @@ def set_skip_false(pom):
     print("*********** ModifyPOM Done! set skip false ***********")
 
 
+def print_file_name(root_dir):
+    for root,dirs,files in os.walk(root_dir):
+        ##print("root:",root)
+        ##print("dirs:",dirs)
+        ##print("files:",files)
+        for f in files:
+            # print(os.path.join(root, f))
+            if f =="pom.xml":
+                set_skip_false(root,f)
+
+
+
 if __name__ == '__main__':
-    set_skip_false("pom.xml")
+    print_file_name(".")
 
