@@ -1,7 +1,10 @@
 #!/usr/bin/python
 import os
 import os.path
+import sys
 import xml.dom.minidom
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 def set_skip_false(path,f):
@@ -31,7 +34,6 @@ def print_file_name(root_dir):
             # print(os.path.join(root, f))
             if f =="pom.xml":
                 set_skip_false(root,f)
-
 
 
 if __name__ == '__main__':
