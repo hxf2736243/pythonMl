@@ -1,5 +1,10 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+from xgboost import XGBClassifier
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.linear_model import LogisticRegression
+
 import pickle
 
 # 读训练数据
@@ -11,7 +16,11 @@ predictor_cols = ['LotArea', 'OverallQual', 'YearBuilt', 'TotRmsAbvGrd']
 # Create training predictors data
 train_X = train[predictor_cols]
 
-my_model = RandomForestRegressor()
+#my_model = RandomForestRegressor()
+#my_model = LinearRegression()
+#my_model = GradientBoostingRegressor()
+#my_model = LogisticRegression()
+my_model=XGBClassifier()
 my_model.fit(train_X, train_y)
 
 # save the model to disk
@@ -28,6 +37,7 @@ test_X = test[predictor_cols]
 loaded_model = pickle.load(open(filename, 'rb'))
 predicted_prices = loaded_model.predict(test_X)
 # We will look at the predicted prices to ensure we have something sensible.
+print("-----------------------------预测结果---------------------------")
 print(predicted_prices)
 
 
