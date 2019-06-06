@@ -1,25 +1,18 @@
+import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
-s = pd.Series([1,3,6,np.nan,44,1])
 
-print(s)
+df = pd.DataFrame({
+    'name':['john','mary','peter','jeff','bill','lisa','jose'],
+    'age':[23,78,22,19,45,33,20],
+    'gender':['M','F','M','M','M','F','M'],
+    'state':['california','dc','california','dc','california','texas','texas'],
+    'num_children':[2,0,0,3,2,1,4],
+    'num_pets':[5,1,0,5,2,2,3]
+})
 
-
-dates = pd.date_range('20160101',periods=10)
-df = pd.DataFrame(np.random.randn(10,4),index=dates,columns=['a','b','c','d'])
-
-print(df)
-
-print("00000000000000000000000000000000000")
-df2 = pd.DataFrame({'A': 1.,
-                    'B': pd.Timestamp('20130102'),
-                    'C': pd.Series(1, index=list(range(4)), dtype='float32'),
-                    'D': np.array([3] * 4, dtype='int32'),
-                    'E': pd.Categorical(["test", "train", "test", "train"]),
-                    'F': 'foo'})
-
-print(df2)
-print("------------------------------------")
-print(df2.values)
-print("==========================")
-print(df2.describe())
+# a simple line plot
+df.groupby(['state','gender']).size().unstack().plot(kind='bar',stacked=True)
+# show
+plt.show()
+# save
+plt.savefig('output.png')
