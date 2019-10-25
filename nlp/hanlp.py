@@ -9,5 +9,11 @@ for term in s_hanlp:
 s_dep = HanLP.parseDependency(sentence)
 print(s_dep)
 
+doc_keyword = HanLP.extractKeyword(sentence, 3)
+for word in doc_keyword:
+    print(word)
+
+
+
 
 
