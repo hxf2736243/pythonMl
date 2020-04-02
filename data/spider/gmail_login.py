@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 
+
 # create a new Chrome session
 driver = webdriver.Chrome()
 driver.implicitly_wait(30)
@@ -23,7 +24,7 @@ password_field = driver.find_element_by_name("password")
 password_field.clear()
 
 #enter password
-password_field.send_keys("12345678")
+password_field.send_keys("HXF009@pay")
 password_field.send_keys(u'\ue007') #unicode for enter key
 time.sleep(10)
 
